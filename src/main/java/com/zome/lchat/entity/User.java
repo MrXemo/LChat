@@ -1,85 +1,88 @@
 package com.zome.lchat.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
+
     private Integer id;
-
-    private String email;
-
-    private String password;
-
+    // 姓名
     private String username;
-
-    private String role;
-
-    private Integer status;
-
-    private Date regtime;
-
-    private String regip;
+    // 性别
+    private String sex;
+    // 地址
+    private String address;
+    // 生日
+    private Date birthday;
+    // 登录手机
+    private String phone;
+    // 登录密码
+    private String password;
+    // 用户创建的订单列表
+    private List<Orders> ordersList;
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setId(Integer mId) {
+        id = mId;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String mUsername) {
+        username = mUsername;
     }
 
-    public String getRole() {
-        return role;
+    public String getSex() {
+        return sex;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setSex(String mSex) {
+        sex = mSex;
     }
 
-    public Integer getStatus() {
-        return status;
+    public String getAddress() {
+        return address;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setAddress(String mAddress) {
+        address = mAddress;
     }
 
-    public Date getRegtime() {
-        return regtime;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setRegtime(Date regtime) {
-        this.regtime = regtime;
+    public void setBirthday(Date mBirthday) {
+        birthday = mBirthday;
     }
 
-    public String getRegip() {
-        return regip;
+    public List<Orders> getOrdersList() {
+        return ordersList;
     }
 
-    public void setRegip(String regip) {
-        this.regip = regip;
+    public void setOrdersList(List<Orders> mOrdersList) {
+        ordersList = mOrdersList;
+    }
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String mPhone) {
+        phone = mPhone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String mPassword) {
+        password = mPassword;
     }
 }

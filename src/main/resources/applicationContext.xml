@@ -75,9 +75,9 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 数据源 -->
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath:sqlmap/*Mapper.xml"/>
+        <property name="mapperLocations" value="classpath:sqlmap/*Mapper"/>
         <property name="typeAliasesPackage" value="com.zome.lchat.entity" />
-
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
 
     <!-- 在spring容器中配置mapper的扫描器产生的动态代理对象在spring的容器中自动注册，bean的id就是mapper类名（首字母小写）-->

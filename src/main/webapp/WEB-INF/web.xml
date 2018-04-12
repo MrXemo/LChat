@@ -62,10 +62,10 @@
     </welcome-file-list>
 
     <!--404错误展示页面，可自行配置-->
-    <!--<error-page>-->
-    <!--<error-code>404</error-code>-->
-    <!--<location>/WEB-INF/views/404.jsp</location>-->
-    <!--</error-page>-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/404.jsp</location>
+    </error-page>
     <!--设置session失效时间为30分钟 -->
     <session-config>
         <session-timeout>600</session-timeout>

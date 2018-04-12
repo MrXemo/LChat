@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zome.lchat.dao.OrderMapper">
+    <resultMap type="com.zome.lchat.entity.User" id="userResultMap">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+        <result property="birthday" column="birthday"/>
+    </resultMap>
+
+    <resultMap id="orderDetail" type="com.zome.lchat.entity.OrderDetail">
+        <id property="id" column="id"/>
+        <id property="itemsNum" column="items_num"/>
+        <association property="items" javaType="com.zome.lchat.entity.Items" resultMap="itemResultMap"/>
+    </resultMap>
+
+    <resultMap id="itemResultMap" type="com.zome.lchat.entity.Items">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="detail" column="detail"/>
+    </resultMap>
+
+    <resultMap type="com.zome.lchat.entity.Orders" id="orderResultMap">
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="number" column="number"/>
+        <result property="createTime" column="create_time"/>
+        <result property="note" column="note"/>
+        <association property="user" javaType="com.zome.lchat.entity.User" resultMap="userResultMap"/>
+        <collection property="orderDetails" resultMap="orderDetail"/>
+    </resultMap>
+
+    <select id="findAllOrder" parameterType="int" resultMap="orderResultMap">
+        select orderdetail.*, orders.*, user.* ,items.* from user, orders, orderdetail,items where user.id=orders.user_id and user.id=#{id} AND orderdetail.orders_id = orders.id AND orderdetail.items_id = items.id
+    </select>
+
+</mapper>
