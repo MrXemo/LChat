@@ -5,7 +5,7 @@
     <resultMap id="user" type="com.zome.lchat.entity.User">
         <id property="id" column="id" />
         <result property="username" column="username"/>
-        <result property="sex" column="sex"/>
+        <result property="gender" column="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
     </resultMap>
 
     <select id="login" resultMap="user" parameterType="java.util.Map">

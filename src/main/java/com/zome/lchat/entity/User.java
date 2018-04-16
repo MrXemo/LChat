@@ -1,25 +1,73 @@
 package com.zome.lchat.entity;
 
+import com.zome.lchat.entity.enumerate.Gender;
+
 import java.util.Date;
 import java.util.List;
 
 public class User {
 
     private Integer id;
-    // 姓名
+    /**
+     * 姓名
+     */
     private String username;
-    // 性别
-    private String sex;
-    // 地址
+    /**
+     * 地址
+     */
     private String address;
-    // 生日
+    /**
+     * 生日
+     */
     private Date birthday;
-    // 登录手机
+    /**
+     * 登录手机
+     */
     private String phone;
-    // 登录密码
+    /**
+     * 登录密码
+     */
     private String password;
-    // 用户创建的订单列表
+    /**
+     * 用户创建的订单列表
+     */
     private List<Orders> ordersList;
+    /**
+     * 性别
+     */
+    private Gender gender;
+    /**
+     * token
+     */
+    private String token;
+    /**
+     * 是否启用
+     */
+    private Boolean isEnabled;
+    /**
+     * 头像
+     */
+    private String avatar;
+    /**
+     * 注册IP
+     */
+    private String registerIp;
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String mAvatar) {
+        avatar = mAvatar;
+    }
+
+    public String getRegisterIp() {
+        return registerIp;
+    }
+
+    public void setRegisterIp(String mRegisterIp) {
+        registerIp = mRegisterIp;
+    }
 
     public Integer getId() {
         return id;
@@ -35,14 +83,6 @@ public class User {
 
     public void setUsername(String mUsername) {
         username = mUsername;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String mSex) {
-        sex = mSex;
     }
 
     public String getAddress() {
@@ -84,5 +124,29 @@ public class User {
 
     public void setPassword(String mPassword) {
         password = mPassword;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender mGender) {
+        gender = mGender;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String mToken) {
+        token = mToken;
+    }
+
+    public Boolean getEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(Boolean mEnabled) {
+        isEnabled = mEnabled;
     }
 }

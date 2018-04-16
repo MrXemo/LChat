@@ -2,6 +2,7 @@ package com.zome.lchat.controller;
 
 import com.zome.lchat.entity.User;
 import com.zome.lchat.service.UserService;
+import com.zome.lchat.utils.JsonMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/app/root")
@@ -19,7 +21,7 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public
     @ResponseBody
-    String login(String phone, String password){
+    Object login(String phone, String password){
         if (phone == null) {
             System.out.println("phone 不能为空");
             return "";
@@ -36,8 +38,13 @@ public class UserController {
             return "";
         }
 
-        System.out.println("登录成功");
-        return "{'登录成功'}";
+        return JsonMessage.success("token", user.getToken());
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String register(String username, String captcha, String password, String code, HttpServletRequest request){
+        return "";
+    }
 }

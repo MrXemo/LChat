@@ -1,6 +1,10 @@
-package com.zome.lchat.dao;
+package com.zome.lchat.test;
 
 
+import com.zome.lchat.dao.AdminMapper;
+import com.zome.lchat.dao.OrderDetailMapper;
+import com.zome.lchat.dao.OrderMapper;
+import com.zome.lchat.dao.UserMapper;
 import com.zome.lchat.entity.Admin;
 import com.zome.lchat.entity.OrderDetail;
 import com.zome.lchat.entity.Orders;
@@ -17,7 +21,7 @@ import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
-public class OrderText {
+public class DaoText {
     @Autowired
     private OrderMapper orderMapper;
     @Autowired
