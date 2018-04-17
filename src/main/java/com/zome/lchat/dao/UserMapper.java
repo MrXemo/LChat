@@ -7,4 +7,6 @@ import java.util.Map;
 
 public interface UserMapper {
     User login(Map map);
+
+    Boolean isExists(String username);
 }
