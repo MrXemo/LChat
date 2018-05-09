@@ -43,7 +43,7 @@ public class User {
     /**
      * 是否启用
      */
-    private Boolean isEnabled;
+    private Boolean isEnabled = true;
     /**
      * 头像
      */

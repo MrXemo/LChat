@@ -197,6 +197,11 @@
             <version>1.1.2</version>
         </dependency>
         <!-- 日志文件管理包 -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>2.10.2</version>
+        </dependency>
         <!-- log start -->
         <dependency>
             <groupId>log4j</groupId>

@@ -1,12 +1,14 @@
 package com.zome.lchat.dao;
 
+import com.zome.lchat.entity.VerificationCode;
+
 import java.util.Map;
 
 public interface VerificationCodeMapper {
     /**
      * 验证验证码
      */
-    Integer findCode(String phone);
+    VerificationCode findCode(String phone);
 
     /**
      * 更新验证码

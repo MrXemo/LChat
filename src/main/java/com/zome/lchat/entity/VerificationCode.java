@@ -48,4 +48,14 @@ public class VerificationCode {
     public void setId(Integer mId) {
         id = mId;
     }
+
+    @Override
+    public String toString() {
+        return "VerificationCode{" +
+                "id=" + id +
+                ", phone='" + phone + '\'' +
+                ", code=" + code +
+                ", sendDate=" + sendDate +
+                '}';
+    }
 }
